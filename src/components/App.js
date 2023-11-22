@@ -32,12 +32,19 @@ const App = () => {
     { name: 'Mount Abu', country: 'India' },
     { name: 'Tirupati', country: 'India' },
     ]
-    
-  return (
-    <div id="main">
-               {/* Do not remove the main div */}
-    </div>
-  )
-}
+   const indianCities = cityList.filter(city => city.country === 'India');
 
-export default App
+    return (
+      <div id="main">
+        {/* Display the list of Indian cities */}
+        <h1>Indian Cities for Vacation</h1>
+        <ul>
+          {indianCities.map((city, index) => (
+            <li key={index}>{city.name}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+  
+  export default App;
